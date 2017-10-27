@@ -1,6 +1,6 @@
 <h1>Certificate List</h1>
 
-<a href="#!/form" class="btn btn-primary">Certificate Baru</a>
+<a href="#!/form/" class="btn btn-primary">Certificate Baru</a>
 
 <table class="table">
 	<tr>
@@ -18,7 +18,7 @@
 		<td>{{c.name}}</td>
 		<td>{{c.type}}</td>
 		<td class="col-md-2">
-			<button ng-click="update()" class="btn btn-primary btn-sm">Update</button>
+			<button ng-click="update(c.id)" class="btn btn-primary btn-sm">Update</button>
 			<button ng-click="delete(c.id)" class="btn btn-danger btn-sm">Delete</button>
 		</td>
 	</tr>

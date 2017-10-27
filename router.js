@@ -31,7 +31,7 @@ angular.module('app', ["ui.router", "ngStorage"])
 	};
 
 	var stateForm = {
-		url: "/form",
+		url: "/form/:id",
 		templateUrl: "tpl/form.html",
 		controller: "FormCtrl"
 	};

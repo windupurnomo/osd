@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller('HomeCtrl', function ($scope, $http){
+.controller('HomeCtrl', function ($scope, $http, $state){
 	
 	var init = function (){
 		$http.get("http://localhost:8081/certificate")
@@ -21,14 +21,28 @@ angular.module('app')
 			alert("gagal delete certificate");
 		});
 	}
+
+	$scope.update = function (id){
+		var data = {
+			id: id
+		};
+		$state.go("form", data);
+	}
 })
 
 
-.controller('FormCtrl', function ($scope, $http, $state){
+.controller('FormCtrl', function ($scope, $http, $state, $stateParams){
+	var id = $stateParams.id;
+
 	$scope.cert = {
 		type: 1,
 		description: "ini adalah description"
 	};
+
+	$http.get("http://localhost:8081/certificate/" + id)
+	.then(function (response){
+		$scope.cert = response.data;
+	});
 
 
 	$scope.save = function (){
