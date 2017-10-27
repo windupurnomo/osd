@@ -1,0 +1,25 @@
+<h1>Certificate List</h1>
+
+<a href="#!/form" class="btn btn-primary">Certificate Baru</a>
+
+<table class="table">
+	<tr>
+		<th>Published</th>
+		<th>Expired</th>
+		<th>Issuer</th>
+		<th>Name</th>
+		<th>Jenis</th>
+		<th>Action</th>
+	</tr>
+	<tr ng-repeat="c in certificates">
+		<td>{{c.publishedDate | date:"dd/MM/yyyy"}}</td>
+		<td>{{c.expired | date:"dd/MM/yyyy"}}</td>
+		<td>{{c.issuer}}</td>
+		<td>{{c.name}}</td>
+		<td>{{c.type}}</td>
+		<td class="col-md-2">
+			<button ng-click="update()" class="btn btn-primary btn-sm">Update</button>
+			<button ng-click="delete(c.id)" class="btn btn-danger btn-sm">Delete</button>
+		</td>
+	</tr>
+</table>

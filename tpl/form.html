@@ -1,0 +1,32 @@
+<h1>Form</h1>
+
+<form class="col-md-5">
+  <div class="form-group">
+    <label for="i">Issuer</label>
+    <input type="text" ng-model="cert.issuer" class="form-control" id="i" aria-describedby="emailHelp" placeholder="issuer">
+    <small id="emailHelp" class="form-text text-muted">certificate issuer</small>
+  </div>
+  <div class="form-group">
+    <label for="n">Name</label>
+    <input type="text" ng-model="cert.name" class="form-control" id="n" placeholder="name">
+  </div>
+  <div class="form-group">
+    <label for="d">Description</label>
+    <input type="text" ng-model="cert.description" class="form-control" id="d" placeholder="description">
+  </div>
+  <div class="form-group">
+    <label for="t">Type</label>
+    <div class="form-horizontal">
+    	<label class="radio-inline">
+    		<input type="radio" ng-model="cert.type" name="type" ng-value="1"> Individu
+    	</label>
+    	<label class="radio-inline">
+    		<input type="radio" ng-model="cert.type" name="type" ng-value="2"> Sistem
+    	</label>
+    	<label class="radio-inline">
+    		<input type="radio" ng-model="cert.type" name="type" ng-value="3"> Jabatan
+    	</label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
