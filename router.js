@@ -36,6 +36,12 @@ angular.module('app', ["ui.router", "ngStorage"])
 		controller: "FormCtrl"
 	};
 
+	var stateDetail = {
+		url: "/detail/:id",
+		templateUrl: "tpl/detail.html",
+		controller: "DetailCtrl"
+	};
+
 	var stateHelp = {
 		url: "/help",
 		templateUrl: "tpl/help.html"
@@ -45,6 +51,7 @@ angular.module('app', ["ui.router", "ngStorage"])
 	$stateProvider
 	.state('home', stateHome)
 	.state('form', stateForm)
+	.state('detail', stateDetail)
 	.state('help', stateHelp)
 
 });
